@@ -37,3 +37,12 @@ CREATE TABLE Salary (
 		REFERENCES Employee(EMPLOYEE_ID)
         ON DELETE CASCADE
 );
+
+-- Inserted values in salary table
+INSERT INTO Salary
+	(EMPLOYEE_REF_ID, SALARY_AMOUNT, SALARY_DATE) VALUES
+		(1, 5000, '18:02:20'),
+		(2, 3000, '18:06:11'),
+		(3, 4000, '18:02:20'),
+		(1, 4500, '18:02:20'),
+		(2, 3500, '18:06:11');
