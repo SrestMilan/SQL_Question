@@ -1,0 +1,14 @@
+-- database created
+CREATE DATABASE Interview;
+
+
+-- created a table employee with attribute
+CREATE TABLE Employee (
+	EMPLOYEE_ID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	FIRST_NAME CHAR(25),
+	LAST_NAME CHAR(25),
+	SALARY INT,
+	JOINING_DATE DATETIME,
+	DEPARTMENT CHAR(25), 
+    MANAGER_ID INT
+);
