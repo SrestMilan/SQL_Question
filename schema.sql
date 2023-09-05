@@ -28,3 +28,12 @@ INSERT INTO Employee
 		( 'Jennifer', 'Paul', 75000, '9/5/2023 09:00:00', 'Account', 012),
 		( 'Deepika', 'Sharma', 90000, '9/5/2023 09:00:00', 'Admin', 017);
 
+-- created table Salary with foreign key i.e. EMPLOYEE_REF_ID takes refrences EMPLOYEE_ID from parent table Employee
+CREATE TABLE Salary (
+	EMPLOYEE_REF_ID INT,
+	SALARY_AMOUNT INT,
+	SALARY_DATE DATETIME,
+	FOREIGN KEY (EMPLOYEE_REF_ID)
+		REFERENCES Employee(EMPLOYEE_ID)
+        ON DELETE CASCADE
+);
