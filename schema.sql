@@ -46,3 +46,26 @@ INSERT INTO Salary
 		(3, 4000, '18:02:20'),
 		(1, 4500, '18:02:20'),
 		(2, 3500, '18:06:11');
+
+
+-- created a table title with foreign key
+CREATE TABLE Title (
+	EMPLOYEE_REF_ID INT,
+	EMPLOYEE_TITLE CHAR(25),
+	AFFECT_FROM DATETIME,
+	FOREIGN KEY (EMPLOYEE_REF_ID)
+		REFERENCES Employee(EMPLOYEE_ID)
+        ON DELETE CASCADE
+);
+
+-- inserted values in title table
+INSERT INTO Title 
+	(EMPLOYEE_REF_ID, EMPLOYEE_TITLE, AFFECT_FROM) VALUES
+ (1, 'Manager', '2018-02-20 00:00:00'),
+ (2, 'Executive', '2018-06-11 00:00:00'),
+ (8, 'Executive', '2018-06-11 00:00:00'),
+ (5, 'Manager', '2018-06-11 00:00:00'),
+ (4, 'Asst. Manager', '2018-06-11 00:00:00'),
+ (7, 'Executive', '2018-06-11 00:00:00'),
+ (6, 'Lead', '2018-06-11 00:00:00'),
+ (3, 'Lead', '2018-06-11 00:00:00');
