@@ -1,10 +1,11 @@
 -- database created
 CREATE DATABASE Interview;
 
-
+-- Use above database
+USE Interview;
 -- created a table employee with attribute
 CREATE TABLE Employee (
-	EMPLOYEE_ID INT IDENTITY(1,1) ,
+	EMPLOYEE_ID INT AUTO_INCREMENT ,
 	FIRST_NAME CHAR(25),
 	LAST_NAME CHAR(25),
 	SALARY INT,
