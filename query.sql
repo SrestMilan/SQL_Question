@@ -13,5 +13,16 @@ SELECT SALARY FROM Employee ORDER BY SALARY DESC LIMIT 2,1;
 --2 Write a SQL query to find top n records?
 SELECT SALARY FROM EmployEe ORDER BY SALARY DESC;
 
+-- 3> Write a SQL query to find the count of employees working in department 'Admin'(run on both sql server and mysql server)
+SELECT COUNT(*) FROM Employee WHERE DEPARTMENT='Admin';  
+
+
+-- 4> Write a SQL query to fetch department wise count employees sorted by department count in desc order.
+SELECT DEPARTMENT, COUNT(*) AS EmployeeCount
+FROM Employee
+GROUP BY DEPARTMENT
+ORDER BY EmployeeCount
+DESC;
+
 
 
