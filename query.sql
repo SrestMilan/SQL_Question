@@ -26,3 +26,11 @@ DESC;
 
 
 
+-- 5> Write a SQL query to find all the employees from employee table who are also managers
+
+SELECT  T1.MANAGER_ID AS [MANAGER ID],T1.FIRST_NAME AS employee_name,T1.MANAGER_ID AS [EMPLOYEE ID],T2.FIRST_NAME as manager_name
+FROM Employee AS T1
+JOIN Employee AS T2
+ON T2.EMPLOYEE_ID=T1.MANAGER_ID
+
+
