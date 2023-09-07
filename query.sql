@@ -40,3 +40,8 @@ IN (SELECT EMPLOYEE_REF_ID from SALARY where E1.EMPLOYEE_ID = SALARY.EMPLOYEE_RE
 
 --7 Write a SQL query to fetch first_name from employee table in upper case
 SELECT UPPER(FIRST_NAME) FROM Employee;
+--8 Write a SQL query to get combine name (first name and last name) of employees from employee table
+
+SELECT CONCAT(FIRST_NAME,' ',LAST_NAME) AS fullname FROM Employee;-- run on MYSQL Server
+SELECT CONCAT(FIRST_NAME,' ',LAST_NAME) AS [Full Name] FROM Employee;-- run on SQL server
+
