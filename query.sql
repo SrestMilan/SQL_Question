@@ -9,13 +9,11 @@ WHERE SALARY <(SELECT MAX(SALARY) FROM Employee WHERE SALARY<(SELECT MAX(SALARY)
 --1.3
 SELECT SALARY FROM Employee ORDER BY SALARY DESC LIMIT 2,1;
 
-
 --2 Write a SQL query to find top n records?
 SELECT SALARY FROM EmployEe ORDER BY SALARY DESC;
 
 -- 3> Write a SQL query to find the count of employees working in department 'Admin'(run on both sql server and mysql server)
 SELECT COUNT(*) FROM Employee WHERE DEPARTMENT='Admin';  
-
 
 -- 4> Write a SQL query to fetch department wise count employees sorted by department count in desc order.
 SELECT DEPARTMENT, COUNT(*) AS EmployeeCount
@@ -24,15 +22,11 @@ GROUP BY DEPARTMENT
 ORDER BY EmployeeCount
 DESC;
 
-
-
 -- 5> Write a SQL query to find all the employees from employee table who are also managers
-
 SELECT  T1.MANAGER_ID AS [MANAGER ID],T1.FIRST_NAME AS employee_name,T1.MANAGER_ID AS [EMPLOYEE ID],T2.FIRST_NAME as manager_name
 FROM Employee AS T1
 JOIN Employee AS T2
 ON T2.EMPLOYEE_ID=T1.MANAGER_ID
-
 
 -- 6> Write a SQL query to find all employees who have salary record in salary table
 select * from Employee AS E1 where EMPLOYEE_ID
@@ -45,10 +39,9 @@ SELECT UPPER(FIRST_NAME) FROM Employee;
 SELECT CONCAT(FIRST_NAME,' ',LAST_NAME) AS fullname FROM Employee;-- run on MYSQL Server
 SELECT CONCAT(FIRST_NAME,' ',LAST_NAME) AS [Full Name] FROM Employee;-- run on SQL server
 
-
 --9  Write a SQL query to print details i.e. salary,joining date,department and manage_id of employee of employee 'Jennifer' and 'James' and vice versa.
 SELECT SALARY,JOINING_DATE,DEPARTMENT,MANAGER_ID FROM Employee WHERE FIRST_NAME IN('Jennifer','James');
 SELECT SALARY,JOINING_DATE,DEPARTMENT,MANAGER_ID FROM Employee WHERE FIRST_NAME NOT IN('Jennifer','James');
 
- --10 Write a SQL query to fetch records of employee whose salary lies between with desc;
+ --10 Write a SQL query to fetch records of employee whose salary lies between with descending order;
  SELECT FIRST_NAME,LAST_NAME, SALARY FROM Employee WHERE SALARY BETWEEN 100000 AND 500000 ORDER BY SALARY DESC ; 
