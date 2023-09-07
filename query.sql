@@ -50,6 +50,6 @@ SELECT SALARY,JOINING_DATE,DEPARTMENT,MANAGER_ID FROM Employee WHERE FIRST_NAME 
 SELECT * FROM Employee WHERE EMPLOYEE_ID=(SELECT MAX(EMPLOYEE_ID) FROM Employee);
 SELECT * FROM Employee WHERE EMPLOYEE_ID IN (SELECT MAX(EMPLOYEE_ID) FROM Employee);
 
- --12 Write a SQL query to show the last record from a table.(2 approach)
+ --12 Write a SQL query to show the last record from a table.(2approachs) 
 SELECT * FROM Employee WHERE EMPLOYEE_ID=(SELECT MIN(EMPLOYEE_ID) FROM Employee);
 SELECT * FROM Employee WHERE EMPLOYEE_ID IN (SELECT MIN(EMPLOYEE_ID) FROM Employee);
