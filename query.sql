@@ -50,14 +50,21 @@ SELECT SALARY,JOINING_DATE,DEPARTMENT,MANAGER_ID FROM Employee WHERE FIRST_NAME 
 SELECT * FROM Employee WHERE EMPLOYEE_ID=(SELECT MAX(EMPLOYEE_ID) FROM Employee);
 SELECT * FROM Employee WHERE EMPLOYEE_ID IN (SELECT MAX(EMPLOYEE_ID) FROM Employee);
 
- --12 Write a SQL query to show the last record from a table.(2approachs) 
+ --12 Write a SQL query to show the first record from a table.(2approachs) 
 SELECT * FROM Employee WHERE EMPLOYEE_ID=(SELECT MIN(EMPLOYEE_ID) FROM Employee);
 SELECT * FROM Employee WHERE EMPLOYEE_ID IN (SELECT MIN(EMPLOYEE_ID) FROM Employee);
 
- --13> Write a SQL query to get last five records from a employee table.
+ --13> Write a SQL query to get last five records from a employee table (2 approach).
  (SELECT * FROM Employee ORDER BY EMPLOYEE_ID DESC LIMIT 5) ORDER BY EMPLOYEE_ID; -- run in mysql server
 
  SELECT * FROM Employee WHERE  EMPLOYEE_ID > (SELECT COUNT(*) FROM Employee) - 5; -- run on MS SQL  server  and MY SQL server
 
-   
+--14 Write a SQL query to find employees having the highest salary in each department
+SELECT DEPARTMENT,MAX(SALARY) FROM Employee GROUP BY DEPARTMENT ORDER BY MAX(SALARY) DESC; -- run on both server
+
+--15 Write a SQL query to find employees having the lowest salary in each department
+SELECT DEPARTMENT,MIN(SALARY) FROM Employee GROUP BY DEPARTMENT ORDER BY MIN(SALARY);
+
+
+
 
