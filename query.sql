@@ -37,3 +37,6 @@ ON T2.EMPLOYEE_ID=T1.MANAGER_ID
 -- 6> Write a SQL query to find all employees who have salary record in salary table
 select * from Employee AS E1 where EMPLOYEE_ID
 IN (SELECT EMPLOYEE_REF_ID from SALARY where E1.EMPLOYEE_ID = SALARY.EMPLOYEE_REF_ID);
+
+--7 Write a SQL query to fetch first_name from employee table in upper case
+SELECT UPPER(FIRST_NAME) FROM Employee;
