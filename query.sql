@@ -45,3 +45,11 @@ SELECT SALARY,JOINING_DATE,DEPARTMENT,MANAGER_ID FROM Employee WHERE FIRST_NAME 
 
  --10 Write a SQL query to fetch records of employee whose salary lies between with descending order;
  SELECT FIRST_NAME,LAST_NAME, SALARY FROM Employee WHERE SALARY BETWEEN 100000 AND 500000 ORDER BY SALARY DESC ; 
+
+ --11 Write a SQL query to show the last record from a table.(2 approach)
+SELECT * FROM Employee WHERE EMPLOYEE_ID=(SELECT MAX(EMPLOYEE_ID) FROM Employee);
+SELECT * FROM Employee WHERE EMPLOYEE_ID IN (SELECT MAX(EMPLOYEE_ID) FROM Employee);
+
+ --12 Write a SQL query to show the last record from a table.(2 approach)
+SELECT * FROM Employee WHERE EMPLOYEE_ID=(SELECT MIN(EMPLOYEE_ID) FROM Employee);
+SELECT * FROM Employee WHERE EMPLOYEE_ID IN (SELECT MIN(EMPLOYEE_ID) FROM Employee);
