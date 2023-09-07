@@ -45,3 +45,8 @@ SELECT UPPER(FIRST_NAME) FROM Employee;
 SELECT CONCAT(FIRST_NAME,' ',LAST_NAME) AS fullname FROM Employee;-- run on MYSQL Server
 SELECT CONCAT(FIRST_NAME,' ',LAST_NAME) AS [Full Name] FROM Employee;-- run on SQL server
 
+
+--9  Write a SQL query to print details i.e. salary,joining date,department and manage_id of employee of employee 'Jennifer' and 'James' and vice versa.
+SELECT SALARY,JOINING_DATE,DEPARTMENT,MANAGER_ID FROM Employee WHERE FIRST_NAME IN('Jennifer','James');
+SELECT SALARY,JOINING_DATE,DEPARTMENT,MANAGER_ID FROM Employee WHERE FIRST_NAME NOT IN('Jennifer','James');
+
