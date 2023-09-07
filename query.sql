@@ -53,3 +53,11 @@ SELECT * FROM Employee WHERE EMPLOYEE_ID IN (SELECT MAX(EMPLOYEE_ID) FROM Employ
  --12 Write a SQL query to show the last record from a table.(2approachs) 
 SELECT * FROM Employee WHERE EMPLOYEE_ID=(SELECT MIN(EMPLOYEE_ID) FROM Employee);
 SELECT * FROM Employee WHERE EMPLOYEE_ID IN (SELECT MIN(EMPLOYEE_ID) FROM Employee);
+
+ --13> Write a SQL query to get last five records from a employee table.
+ (SELECT * FROM Employee ORDER BY EMPLOYEE_ID DESC LIMIT 5) ORDER BY EMPLOYEE_ID; -- run in mysql server
+
+ SELECT * FROM Employee WHERE  EMPLOYEE_ID > (SELECT COUNT(*) FROM Employee) - 5; -- run on MS SQL  server  and MY SQL server
+
+   
+
